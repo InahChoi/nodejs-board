@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <h1>
+    <%= title %>
+  </h1>
+</head>
+
+<body>
+
+  <div>
+    <table border="2">
+      <colgroup>
+        <col width='50'>
+        <col width='150'>
+        <col width='400'>
+        <col width='100'>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>글제목</th>
+          <th>작성자</th>
+          <th>글내용</th>
+          <th>작성일</th>
+        </tr>
+      </thead>
+      <a href='/write'>글쓰기</a>
+      <tbody>
+        <% for(i=0; i < board.length; i++) { %>
+          <tr>
+            <td>
+              <%=i+1 %>
+            </td>
+            <td>
+              <%=board[i].title%>
+            </td>
+            <td>
+              <%=board[i].author%>
+            </td>
+            <td>
+              <a href='/board/<%= board[i]._id%>'>
+                <p>
+                  <%=board[i].contents%>
+                </p>
+              </a>
+            </td>
+            <td>
+              <%=board[i].boardDate%>
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

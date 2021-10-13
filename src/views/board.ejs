@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>작성일 : <%=board.boardDate%>
+  </p>
+  <h1>제목 : <%=board.title%>
+  </h1>
+  <h3>작성자 : <%=board.author%>
+  </h3>
+  <h3>내용 : <%=board.contents%>
+  </h3>
+
+  <a href='/edit/<%=board._id%>'>글 수정</a>
+  <form action='/delete/<%=board._id%>?_method=delete' method="POST">
+    <input type="hidden" name="id">
+    <input type="submit" value="글 삭제">
+  </form>
+</body>
+
+</html>

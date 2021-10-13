@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <form action="/board/write" method="post">
+    제목 : <input type="text" name="title"><br>
+    내용 : <textarea name="contents"></textarea><br>
+    작성자 : <input type="text" name="author"><br>
+    <input type="submit" value="submit">
+  </form>
+</body>
+
+</html>
